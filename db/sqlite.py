@@ -38,7 +38,8 @@ class Sqlite:
     c.execute("CREATE TABLE settings (id INTEGER PRIMARY KEY AUTOINCREMENT, key TEXT,value TEXT)")
     c.execute("INSERT INTO settings (key,value) VALUES (?,?)",["version","0"])
 
-    #c.execute("CREATE TABLE notes (id INTEGER PRIMARY KEY AUTOINCREMENT, timestamp NUMERIC, category TEXT, content TEXT)")
+    c.execute("""CREATE TABLE stations (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, zone NUMBER,
+                 postal_code TEXT, lat NUMBER, lon NUMBER)""")
 
     self._conn.commit()
     c.close()
