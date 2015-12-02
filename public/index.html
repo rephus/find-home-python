@@ -1,9 +1,32 @@
 <html>
     <head>
         <link type="text/css" href="css/style.css" rel="stylesheet" />
-        <script languaje='javascript' src="js/jquery/jquery-1.9.1.min.js"></script>
+        <script languaje='javascript' src="js/jquery-1.9.1.min.js"></script>
+        <script languaje='javascript' src="js/mustache.min.js"></script>
+
+        <script languaje='javascript' src="js/stations.js"></script>
+
     </head>
-    <body>
-        <h1>Find home</h1>
-    </body>
+  <body>
+
+        <button id='calculate-distance'>Distance</button>
+
+      <script id='stations-template' type=x-tmpl-mustache>
+           {{ #. }}
+              <tr>
+                <td>
+                  <label><input type='radio' name='from' class='from' value='{{ lat }},{{ lon }}'/>{{ name }}</label>
+                </td>
+                <td>
+                  <label><input type='radio' name='to' class='to' value='{{ lat }},{{ lon }}'/>{{ name }}</label>
+                </td>
+              </tr>
+            {{ /. }}
+        </script>
+      <table id='stations'>
+      </table>
+
+      <p id='distance-result' ></p>
+  </body>
+
 </html>
